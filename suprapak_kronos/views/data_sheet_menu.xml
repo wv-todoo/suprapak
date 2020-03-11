@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <menuitem id="parent_menu_data_sheet"
+                  name="Kronos"
+                  groups="group_data_sheet_user"
+                  icon="fa-wrench"
+                  web_icon="todoo_kronos,static/description/icon.png"
+                  sequence="36"/>
+
+        <menuitem id="menu_data_sheet_dashboard"
+                  name="Kronos"
+                  action="action_data_sheet"
+                  parent="parent_menu_data_sheet"
+                  sequence="5"/>
+
+        <menuitem id="menu_data_sheet_conf"
+                  name="Configuration"
+                  groups="group_data_sheet_admin"
+                  parent="parent_menu_data_sheet"
+                  sequence="10"/>
+
+        <menuitem id="menu_data_product_type"
+                  name="Product type"
+                  action="action_data_product_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="5"/>
+
+        <menuitem id="menu_data_draw_type"
+                  name="Draw type"
+                  action="action_data_draw_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="10"/>
+
+        <menuitem id="menu_data_movie_type"
+                  name="Movie type"
+                  action="action_data_movie_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="15"/>
+
+        <menuitem id="menu_data_movie_color"
+                  name="Movie color"
+                  action="action_data_movie_color"
+                  parent="menu_data_sheet_conf"
+                  sequence="20"/>
+
+        <menuitem id="menu_data_caliber_type"
+                  name="Caliber type"
+                  action="action_data_caliber_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="25"/>
+
+        <menuitem id="menu_data_tag_form"
+                  name="Tag Form"
+                  action="action_data_tag_form"
+                  parent="menu_data_sheet_conf"
+                  sequence="30"/>
+
+        <menuitem id="menu_data_material"
+                  name="Material"
+                  action="action_data_material"
+                  parent="menu_data_sheet_conf"
+                  sequence="35"/>
+
+        <menuitem id="menu_data_application_mode"
+                  name="Application Mode"
+                  action="action_data_application_mode"
+                  parent="menu_data_sheet_conf"
+                  sequence="40"/>
+
+        <menuitem id="menu_data_application_position"
+                  name="Application Position"
+                  action="action_data_application_position"
+                  parent="menu_data_sheet_conf"
+                  sequence="45"/>
+
+        <menuitem id="menu_data_package_contents"
+                  name="Package Contents"
+                  action="action_data_application_contents"
+                  parent="menu_data_sheet_conf"
+                  sequence="50"/>
+
+        <menuitem id="menu_data_form"
+                  name="Form"
+                  action="action_data_form"
+                  parent="menu_data_sheet_conf"
+                  sequence="55"/>
+
+        <menuitem id="menu_specification_width"
+                  name="Specification Width"
+                  action="action_specification_width"
+                  parent="menu_data_sheet_conf"
+                  sequence="60"/>
+
+        <menuitem id="menu_specification_long"
+                  name="Specification Long"
+                  action="action_specification_long"
+                  parent="menu_data_sheet_conf"
+                  sequence="65"/>
+
+        <menuitem id="menu_width_overlap"
+                  name="Width Overlap"
+                  action="action_width_overlap"
+                  parent="menu_data_sheet_conf"
+                  sequence="70"/>
+    </data>
+</odoo>

@@ -1,0 +1,268 @@
+<odoo>
+    <data>
+        <record id="form_data_sheet" model="ir.ui.view">
+            <field name="name">form.data.sheet</field>
+            <field name="model">data.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Data sheet">
+                    <header>
+                        <button string="New Quotation" name="action_sale_quotations_new" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="action_view_sale_quotation" icon="fa-pencil-square-o">
+                                <field name="quotation_count" widget="statinfo" string="Quotations"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name" />
+                            <h1><field name="name" required="True"/></h1>
+                        </div>
+                        <separator string="General" colspan="2" />
+                        <group>
+                            <group>
+                                <field name="product_id" required="True"/>
+                                <field name="opportunity_id" readonly="True"/>
+                            </group>
+                            <group>
+                                <field name="priority" widget="priority"/>
+                                <field name="type_sheet"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Basic information">
+                                <group>
+                                    <group>
+                                        <field name="partner_id"/>
+                                        <field name="commentary"/>
+                                        <field name="product_code"/>
+                                    </group>
+                                    <group>
+                                        <field name="team_id"/>
+                                        <field name="currency_id"/>
+                                        <field name="tag_form_id"/>
+                                        <field name="material_id"/>
+                                        <field name="application_id"/>
+                                        <field name="position_id"/>
+                                        <field name="content_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="photo" widget="pdf_viewer"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Technical information">
+                                <group>
+                                    <group>
+                                        <field name="print" widget="checkbox"/>
+                                        <field name="no_print" widget="checkbox"/>
+                                        <field name="print_class" widget="radio" attrs="{'invisible':[('print', '!=', True)]}"/>
+                                        <field name="print_type" attrs="{'invisible':[('print', '!=', True)]}"/>
+
+                                        <field name="product_type_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="quantity"/>
+                                        <field name="uom_id"/>
+                                        <field name="form_id"/>
+                                        <field name="movie_type_id"/>
+                                        <field name="chemical_composition"/>
+                                    </group>
+                                    <group>
+                                        <field name="specification_width_id"/>
+                                        <field name="specification_long_id"/>
+                                        <field name="caliber_id"/>
+                                        <field name="overlap_id"/>
+                                        <field name="tolerance"/>
+                                        <field name="rhombus"/>
+                                    </group>
+                                    <group>
+                                        <field name="guillotine"/>
+                                        <field name=""/>
+                                    </group>
+                                    <!--<group>
+                                        <field name="draw_type_id"/>
+
+                                        <field name="color_movie__id"/>
+                                        <field name="tongue"/>
+                                        <field name="thermal_adhesive"/>
+                                    </group>
+                                    <group>
+
+                                    </group>
+                                    <group>
+                                        <field name="tolerance_width"/>
+                                        <field name="tolerance_long"/>
+                                        <field name="tolerance_caliber"/>
+                                    </group>-->
+                                </group>
+                            </page>
+                            <page string="Comments">
+                                <field name="comments"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_data_sheet" model="ir.ui.view">
+            <field name="name">tree.data.sheet</field>
+            <field name="model">data.sheet</field>
+            <field name="arch" type="xml">
+                <tree string="Data sheet">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                    <field name="priority"/>
+                    <field name="type_sheet"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_sheet">
+            <field name="name">Data sheet</field>
+            <field name="res_model">data.sheet</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_new_data_sheet_new" model="ir.actions.act_window">
+            <field name="name">Data sheet</field>
+            <field name="res_model">data.sheet</field>
+            <field name="view_mode">form,tree</field>
+            <field name="domain">[('opportunity_id', '=', active_id)]</field>
+            <field name="context">{'search_default_opportunity_id': active_id, 'default_opportunity_id': active_id}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_product_type">
+            <field name="name">Product type</field>
+            <field name="res_model">data.product.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_draw_type">
+            <field name="name">Draw type</field>
+            <field name="res_model">data.draw.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_movie_type">
+            <field name="name">Movie type</field>
+            <field name="res_model">data.movie.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_movie_color">
+            <field name="name">Movie color</field>
+            <field name="res_model">data.movie.color</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_caliber_type">
+            <field name="name">Caliber type</field>
+            <field name="res_model">data.caliber.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_tag_form">
+            <field name="name">Form</field>
+            <field name="res_model">data.tag.form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_material">
+            <field name="name">Material</field>
+            <field name="res_model">data.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_application_mode">
+            <field name="name">Material</field>
+            <field name="res_model">data.application.mode</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_application_position">
+            <field name="name">Material</field>
+            <field name="res_model">data.application.position</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_print_type">
+            <field name="name">Print Type</field>
+            <field name="res_model">print.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_material">
+            <field name="name">Data Material</field>
+            <field name="res_model">data.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_application_mode">
+            <field name="name">Data Application Mode</field>
+            <field name="res_model">data.application.mode</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_application_position">
+            <field name="name">Data Application Position</field>
+            <field name="res_model">data.application.position</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_application_contents">
+            <field name="name">Data Application Contents</field>
+            <field name="res_model">data.application.contents</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_data_form">
+            <field name="name">Form</field>
+            <field name="res_model">data.form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_specification_width">
+            <field name="name">Specification Width</field>
+            <field name="res_model">specification.width</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_specification_long">
+            <field name="name">Specification Long</field>
+            <field name="res_model">specification.long</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_width_overlap">
+            <field name="name">Width Overlap</field>
+            <field name="res_model">width.overlap</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.module.category" id="module_category_data_sheet">
+            <field name="name">Data sheet</field>
+            <field name="description">Helps you manage your data sheet.</field>
+        </record>
+
+        <record id="group_data_sheet_admin" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="category_id" ref="module_category_data_sheet"/>
+        </record>
+
+        <record id="group_data_sheet_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_data_sheet"/>
+            <field name="implied_ids" eval="[(4, ref('group_data_sheet_admin'))]"/>
+        </record>
+    </data>
+</odoo>
