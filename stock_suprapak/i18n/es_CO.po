@@ -55,9 +55,3 @@ msgstr "Plantilla del Producto"
 #: model:ir.model.fields,field_description:suprapak_stock.field_product_template__type_selle
 msgid "Type of Sealed"
 msgstr "Tipo de sellado"
-
-#. module: suprapak_stock
-#: model:ir.model.fields,field_description:suprapak_stock.field_product_product__version
-#: model:ir.model.fields,field_description:suprapak_stock.field_product_template__version
-msgid "Version"
-msgstr "Versión"
