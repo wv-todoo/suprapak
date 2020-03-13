@@ -146,13 +146,8 @@ class DataSheet(models.Model):
             'product_type_id': self.product_type_id.id,
             'draw_type_id': self.draw_type_id.id,
             'movie_type_id': self.movie_type_id.id,
-<<<<<<< HEAD
             'specification_width': self.specification_width_id.id,
             'specification_long': self.specification_long_id.id,
-=======
-            'specification_width': self.specification_width.id,
-            'specification_long': self.specification_long.id,
->>>>>>> origin/staging3
             'caliber_id': self.caliber_id.id,
         }
         action['context'] = {
