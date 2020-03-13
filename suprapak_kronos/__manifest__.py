@@ -17,11 +17,11 @@
     'version': '13.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['sale_crm'],
+    'depends': ['sale_crm','mrp'],
 
     # always loaded
     'data': [
-        #'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
         'views/data_sheet_view.xml',

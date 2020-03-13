@@ -76,11 +76,12 @@
                                         <field name="caliber_id"/>
                                         <field name="overlap_id"/>
                                         <field name="tolerance"/>
-                                        <field name="rhombus"/>
+                                        <field name="rhombus" attrs="{'invisible':[('overlap_id', 'not in', True)]}"/>
                                     </group>
                                     <group>
                                         <field name="guillotine"/>
-                                        <field name=""/>
+                                        <field name="overlap_location_id"/>
+                                        <field name="rhombus"/>
                                     </group>
                                     <!--<group>
                                         <field name="draw_type_id"/>
@@ -99,6 +100,11 @@
                                     </group>-->
                                 </group>
                             </page>
+                            <page string="Bills of Materials">
+                                <field name="lists_ids"/>
+                            </page>
+                            <page string="Routings">
+                                <field name="routings_ids"/>
                             <page string="Comments">
                                 <field name="comments"/>
                             </page>

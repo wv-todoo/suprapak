@@ -13,7 +13,6 @@ user_data_application_contents,user_data_application_contents,model_data_applica
 user_data_application_contents,user_data_application_contents,model_data_application_contents,group_data_sheet_user,1,1,1,0
 user_print_type,user_print_type,model_print_type,group_data_sheet_user,1,1,1,0
 user_chemical_composition,user_chemical_composition,model_chemical_composition,group_data_sheet_user,1,1,1,0
-
-
-
-
+user_specification_width,user_specification_width,model_specification_width,group_data_sheet_user,1,1,1,0
+user_specification_long,user_specification_long,model_specification_long,group_data_sheet_user,1,1,1,0
+user_width_overlap,user_width_overlap,model_width_overlap,group_data_sheet_user,1,1,1,0
