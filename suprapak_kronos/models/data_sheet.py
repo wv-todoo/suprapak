@@ -296,7 +296,6 @@ class Widthoverlap(models.Model):
     name = fields.Char('Width Overlap')
     tolerance = fields.Char('Tolerance')
     code = fields.Char('code')
-<<<<<<< HEAD
 
 class Widthoverlap(models.Model):
     _name = 'overlap.location'
@@ -304,5 +303,3 @@ class Widthoverlap(models.Model):
 
     name = fields.Char('Overlap Location')
     code = fields.Char('code')
-=======
->>>>>>> origin/staging3
