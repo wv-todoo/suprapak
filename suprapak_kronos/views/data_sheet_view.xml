@@ -81,6 +81,7 @@
                                     <group>
                                         <field name="guillotine"/>
                                         <field name="overlap_location_id"/>
+                                        <field name="rhombus"/>
                                     </group>
                                     <!--<group>
                                         <field name="draw_type_id"/>
@@ -104,6 +105,8 @@
                             </page>
                             <page string="Routings">
                                 <field name="routings_ids"/>
+                            <page string="Comments">
+                                <field name="comments"/>
                             </page>
                         </notebook>
                     </sheet>

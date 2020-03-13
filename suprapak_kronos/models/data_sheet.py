@@ -114,8 +114,13 @@ class DataSheet(models.Model):
                 'product_type_id': record.product_type_id.id,
                 'draw_type_id': record.draw_type_id.id,
                 'movie_type_id': record.movie_type_id.id,
+<<<<<<< HEAD
                 'specification_width': record.specification_width_id.id,
                 'specification_long': record.specification_long_id.id,
+=======
+                'specification_width': record.specification_width.id,
+                'specification_long': record.specification_long.id,
+>>>>>>> origin/staging3
                 'caliber_id': record.caliber_id.id,
                 'tongue': record.tongue,
                 'thermal_adhesive': record.thermal_adhesive,
@@ -146,8 +151,13 @@ class DataSheet(models.Model):
             'product_type_id': self.product_type_id.id,
             'draw_type_id': self.draw_type_id.id,
             'movie_type_id': self.movie_type_id.id,
+<<<<<<< HEAD
             'specification_width': self.specification_width_id.id,
             'specification_long': self.specification_long_id.id,
+=======
+            'specification_width': self.specification_width.id,
+            'specification_long': self.specification_long.id,
+>>>>>>> origin/staging3
             'caliber_id': self.caliber_id.id,
         }
         action['context'] = {
@@ -296,6 +306,7 @@ class Widthoverlap(models.Model):
     name = fields.Char('Width Overlap')
     tolerance = fields.Char('Tolerance')
     code = fields.Char('code')
+<<<<<<< HEAD
 
 class Widthoverlap(models.Model):
     _name = 'overlap.location'
@@ -303,3 +314,5 @@ class Widthoverlap(models.Model):
 
     name = fields.Char('Overlap Location')
     code = fields.Char('code')
+=======
+>>>>>>> origin/staging3
