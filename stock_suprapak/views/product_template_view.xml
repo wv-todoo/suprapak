@@ -8,7 +8,6 @@
                 <xpath expr="//field[@name='company_id']" position="after">
                     <field name="customer_reference"/>
        		 		<field name="x_currency_id"/>
-       		 		<field name="version"/>
         		 	<field name="date_version"/>
         		</xpath>   
             </field>
