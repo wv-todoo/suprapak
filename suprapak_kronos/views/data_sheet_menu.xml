@@ -102,5 +102,71 @@
                   action="action_width_overlap"
                   parent="menu_data_sheet_conf"
                   sequence="70"/>
+
+        <menuitem id="menu_overlap_location"
+                  name="Overlap Location"
+                  action="action_width_overlap"
+                  parent="menu_data_sheet_conf"
+                  sequence="75"/>
+
+        <menuitem id="menu_presentation"
+                  name="Presentation"
+                  action="action_presentation"
+                  parent="menu_data_sheet_conf"
+                  sequence="80"/>
+
+        <menuitem id="menu_core_diameter"
+                  name="Core Diameter"
+                  action="action_core_diameter"
+                  parent="menu_data_sheet_conf"
+                  sequence="85"/>
+
+        <menuitem id="menu_embossing_number"
+                  name="Embossing Number"
+                  action="action_embossing_number"
+                  parent="menu_data_sheet_conf"
+                  sequence="90"/>
+
+        <menuitem id="menu_number_splices"
+                  name="Number Splices"
+                  action="action_number_splices"
+                  parent="menu_data_sheet_conf"
+                  sequence="95"/>
+
+        <menuitem id="menu_splice_type"
+                  name="Splice Type"
+                  action="action_splice_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="100"/>
+
+        <menuitem id="menu_splicing_tape"
+                  name="Splicing Tape"
+                  action="action_splicing_tape"
+                  parent="menu_data_sheet_conf"
+                  sequence="105"/>
+
+        <menuitem id="menu_seal_type"
+                  name="Seal Type"
+                  action="action_seal_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="110"/>
+
+        <menuitem id="menu_performed"
+                  name="Performed"
+                  action="action_performed"
+                  parent="menu_data_sheet_conf"
+                  sequence="115"/>
+
+        <menuitem id="menu_barcode_type"
+                  name="Barcode Type"
+                  action="action_barcode_type"
+                  parent="menu_data_sheet_conf"
+                  sequence="120"/>
+
+        <menuitem id="menu_mechanic_plan"
+                  name="Mechanic Plan"
+                  action="action_mechanic_plan"
+                  parent="menu_data_sheet_conf"
+                  sequence="120"/>
     </data>
 </odoo>

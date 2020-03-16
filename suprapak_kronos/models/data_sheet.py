@@ -65,13 +65,43 @@ class DataSheet(models.Model):
     content_id = fields.Many2one('data.application.contents','Package Contents')
     quantity = fields.Char('Quantity')
     form_id = fields.Many2one('data.form','Form')
-    overlap_id = fields.Many2one('Width.overlap','Width Overlap')
+    overlap_id = fields.Many2one('width.overlap','Width Overlap')
     tolerance = fields.Char('Tolerance')
     overlap_location_id = fields.Many2one('overlap.location','Overlap Location')
     list_id = fields.Many2one('mrp.bom')
     lists_ids = fields.Many2many('mrp.bom','sheet_bom_rel','sheet_id','bom_id','Bills of Materials')
     routing_id = fields.Many2one('mrp.routing','Routings')
     routings_ids = fields.Many2many('mrp.routing','sheet_routing_rel','sheet_id','routing_id','Routing')
+    average_label_weight = fields.Integer('Average Lable Weight')
+    label_weight = fields.Integer('Lable Weight')
+    roll_weight = fields.Char('Roll Weight')
+    presentation_id = fields.Many2one('presentation','Presentation')
+    meter_per_roll = fields.Char('Meters per roll')
+    core_diameter_id = fields.Many2one('core.diameter','Core Diameter')
+    embossing_number_id = fields.Many2one('embossing.number', 'Embossing Number')
+    number_splices_id = fields.Many2one('number.splices','Number Splices')
+    splice_type_id = fields.Many2one('splice.type','Splice Type')
+    splicing_tape_id = fields.Many2one('splicing.tape','Splicing tape')
+    seal_type_id = fields.Many2one('seal.type','Seal Type')
+    sealing_tab = fields.Char('Sealing Tab')
+    mold_id = fields.Many2one('preformed','Mold')
+    bottom_diameter = fields.Float('Bottom Diameter')
+    upper_diameter = fields.Float('Upper Diameter')
+    tab_length = fields.Float('Tab Length')
+    band_height = fields.Float('Band Height')
+    long_modification = fields.Float('Long Modification')
+    barcode_type_id = fields.Many2one('barcode.type','Barcode Type')
+    barcode_number = fields.Integer('Number')
+    mechanic_plan_id = fields.Many2one('mechanic.plan')
+    mechanic_plan_ids = fields.Many2many('mechanic.plan','sheet_mechanic_rel','sheet_id','mechanic_id','Mechanic Plan')
+
+    @api.onchange('mold_id')
+    def _onchange_mold_id(self):
+        if self.mold_id:
+            self.bottom_diameter = self.mold_id.bottom_diameter
+            self.upper_diameter = self.mold_id.upper_diameter
+            self.tab_length = self.mold_id.tab_length
+            self.band_height = self.mold_id.band_height
 
     @api.onchange('overlap_id')
     def _onchange_overlap_id(self):
@@ -302,4 +332,77 @@ class Widthoverlap(models.Model):
     _description = 'Overlap Location'
 
     name = fields.Char('Overlap Location')
+    code = fields.Char('code')
+
+class Presentation(models.Model):
+    _name = 'presentation'
+    _description = 'Presentation'
+
+    name = fields.Char('Presentation')
+    code = fields.Char('code')
+
+class CoreDiameter(models.Model):
+    _name = 'core.diameter'
+    _description = 'Core Diameter'
+
+    name = fields.Char('Core Diameter')
+    code = fields.Char('code')
+
+class CoreDiameter(models.Model):
+    _name = 'embossing.number'
+    _description = 'Embossing Number'
+
+    name = fields.Char('Embossing Number')
+    code = fields.Char('code')
+
+class NumberSplices(models.Model):
+    _name = 'number.splices'
+    _description = 'Number of splices'
+
+    name = fields.Char('Number splices')
+    code = fields.Char('code')
+
+class SpliceType(models.Model):
+    _name = 'splice.type'
+    _description = 'Splice type'
+
+    name = fields.Char('Splice type')
+    code = fields.Char('code')
+
+class SplicingTape(models.Model):
+    _name = 'splicing.tape'
+    _description = 'Splicing tape'
+
+    name = fields.Char('Splicing tape')
+    code = fields.Char('code')
+
+class Seal_Type(models.Model):
+    _name = 'seal.type'
+    _description = 'Seal Type'
+
+    name = fields.Char('Seal Type')
+    code = fields.Char('code')
+
+class Preformed(models.Model):
+    _name = 'preformed'
+    _description = 'Preformed Table'
+
+    name = fields.Char('Mold')
+    bottom_diameter = fields.Float('Bottom Diameter')
+    upper_diameter = fields.Float('Upper Diameter')
+    tab_length = fields.Float('Tab Length')
+    band_height = fields.Float('Band Height')
+
+class BarcodeType(models.Model):
+    _name = 'barcode.type'
+    _description = 'Barcode Type'
+
+    name = fields.Char('Barcode Type')
+    code = fields.Char('code')
+
+class MechanicPlan(models.Model):
+    _name = 'mechanic.plan'
+    _description = 'Mechanic Plan'
+
+    name = fields.Binary('Mechanic Plan')
     code = fields.Char('code')

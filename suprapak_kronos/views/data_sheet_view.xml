@@ -82,7 +82,42 @@
                                         <field name="guillotine"/>
                                         <field name="overlap_location_id"/>
                                         <field name="rhombus"/>
+                                        <field name="average_label_weight"/>
+                                        <field name="label_weight"/>
+                                        <field name="roll_weight"/>
                                     </group>
+                                    <group><!--rollo-->
+                                        <field name="presentation_id"/>
+                                        <field name="meter_per_roll"/>
+                                        <field name="core_diameter_id"/>
+                                        <field name="embossing_number_id"/>
+                                        <field name="number_splices_id"/>
+                                        <fields name="splice_type_id"/>
+                                        <field name="splicing_tape_id"/>
+                                    </group>
+                                    <group><!--sellado-->
+                                        <field name="seal_type_id"/>
+                                        <field name="sealing_tab"/>
+                                    </group>
+                                    <group><!--preformado-->
+                                        <field name="mold_id"/>
+                                        <field name="bottom_diameter"/>
+                                        <field name="upper_diameter"/>
+                                        <field name="tab_length"/>
+                                        <field name="band_height"/>
+                                        <field name="long_modification"/>
+                                    </group>
+                                    <group><!--plano mecanico-->
+                                        <field name="mechanic_plan_ids" />
+                                    </group>
+                                    <group><!--montaje multiple-->
+
+                                    </group>
+                                    <group>
+                                        <field name="barcode_type_id"/>
+                                        <field name="barcode_number"/>
+                                    </group>
+
                                     <!--<group>
                                         <field name="draw_type_id"/>
 
@@ -250,6 +285,72 @@
         <record model="ir.actions.act_window" id="action_width_overlap">
             <field name="name">Width Overlap</field>
             <field name="res_model">width.overlap</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_overlap_location">
+            <field name="name">Overlap Location</field>
+            <field name="res_model">overlap.location</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_presentation">
+            <field name="name">Presentation</field>
+            <field name="res_model">presentation</field>
+            <field name="view_mode">tree,form</field>
+        </record>core_diameter
+
+        <record model="ir.actions.act_window" id="action_core_diameter">
+            <field name="name">Core Diameter</field>
+            <field name="res_model">core.diameter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_embossing_number">
+            <field name="name">Embossing Number</field>
+            <field name="res_model">embossing.number</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_number_splices">
+            <field name="name">Number Splices</field>
+            <field name="res_model">number.splices</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_splice_type">
+            <field name="name">Splice Type</field>
+            <field name="res_model">splice.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_splicing_tape">
+            <field name="name">Splicing Tape</field>
+            <field name="res_model">splicing.tape</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_seal_type">
+            <field name="name">Seal Type</field>
+            <field name="res_model">seal.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_performed">
+            <field name="name">Performed</field>
+            <field name="res_model">preformed</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_barcode_type">
+            <field name="name">Barcode Type</field>
+            <field name="res_model">barcode.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_mechanic_plan">
+            <field name="name">Mechanic Plan</field>
+            <field name="res_model">mechanic.plan</field>
             <field name="view_mode">tree,form</field>
         </record>
 
