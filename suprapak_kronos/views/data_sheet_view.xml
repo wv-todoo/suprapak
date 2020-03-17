@@ -105,6 +105,7 @@
                                         <field name="upper_diameter"/>
                                         <field name="tab_length"/>
                                         <field name="band_height"/>
+                                        <field name="product"/>
                                         <field name="long_modification"/>
                                     </group>
                                     <group><!--plano mecanico-->
@@ -116,6 +117,11 @@
                                     <group>
                                         <field name="barcode_type_id"/>
                                         <field name="barcode_number"/>
+                                    </group>
+                                    <group>
+                                        <field name="microperforated" widget="checkbox"/>
+                                        <field name="microperforated_ids" attrs="{'invisible':[('microperforated', '!=', True)]}"/>
+
                                     </group>
 
                                     <!--<group>
@@ -351,6 +357,12 @@
         <record model="ir.actions.act_window" id="action_mechanic_plan">
             <field name="name">Mechanic Plan</field>
             <field name="res_model">mechanic.plan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_microperforated">
+            <field name="name">Microperforated</field>
+            <field name="res_model">microperforated</field>
             <field name="view_mode">tree,form</field>
         </record>
 

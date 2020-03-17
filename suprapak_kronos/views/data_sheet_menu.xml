@@ -168,5 +168,11 @@
                   action="action_mechanic_plan"
                   parent="menu_data_sheet_conf"
                   sequence="120"/>
+
+        <menuitem id="menu_microperforated"
+                  name="Microperforated"
+                  action="action_microperforated"
+                  parent="menu_data_sheet_conf"
+                  sequence="120"/>
     </data>
 </odoo>

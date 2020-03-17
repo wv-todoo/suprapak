@@ -27,3 +27,4 @@ user_seal_type,user_seal_type,suprapak_kronos.model_seal_type,suprapak_kronos.gr
 user_preformed,user_preformed,suprapak_kronos.model_preformed,suprapak_kronos.group_data_sheet_user,1,1,1,0
 user_barcode_type,user_barcode_type,suprapak_kronos.model_barcode_type,suprapak_kronos.group_data_sheet_user,1,1,1,0
 user_mechanic_plan,user_mechanic_plan,suprapak_kronos.model_mechanic_plan,suprapak_kronos.group_data_sheet_user,1,1,1,0
+user_microperforated,user_microperforated,suprapak_kronos.model_microperforated,suprapak_kronos.group_data_sheet_user,1,1,1,0

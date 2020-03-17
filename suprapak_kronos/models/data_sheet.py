@@ -89,11 +89,15 @@ class DataSheet(models.Model):
     upper_diameter = fields.Float('Upper Diameter')
     tab_length = fields.Float('Tab Length')
     band_height = fields.Float('Band Height')
+    product = fields.Char('Product')
     long_modification = fields.Float('Long Modification')
     barcode_type_id = fields.Many2one('barcode.type','Barcode Type')
     barcode_number = fields.Integer('Number')
     mechanic_plan_id = fields.Many2one('mechanic.plan')
     mechanic_plan_ids = fields.Many2many('mechanic.plan','sheet_mechanic_rel','sheet_id','mechanic_id','Mechanic Plan')
+    microperforated = fields.Boolean('Microperforated')
+    microperforated_id = fields.Many2one('microperforated')
+    microperforated_ids = fields.Many2many('microperforated','sheet_microperfored_rel','sheed_id','microperfored_id','Microperfored')
 
     @api.onchange('mold_id')
     def _onchange_mold_id(self):
@@ -102,6 +106,7 @@ class DataSheet(models.Model):
             self.upper_diameter = self.mold_id.upper_diameter
             self.tab_length = self.mold_id.tab_length
             self.band_height = self.mold_id.band_height
+            self.product = self.mold_id.product
 
     @api.onchange('overlap_id')
     def _onchange_overlap_id(self):
@@ -392,6 +397,7 @@ class Preformed(models.Model):
     upper_diameter = fields.Float('Upper Diameter')
     tab_length = fields.Float('Tab Length')
     band_height = fields.Float('Band Height')
+    product = fields.Char('Product')
 
 class BarcodeType(models.Model):
     _name = 'barcode.type'
@@ -406,3 +412,11 @@ class MechanicPlan(models.Model):
 
     name = fields.Binary('Mechanic Plan')
     code = fields.Char('code')
+
+class Microperforated(models.Model):
+    _name = 'microperforated'
+    _description = 'Microperforated'
+
+    cross = fields.Char('Cross')
+    logitudinal = fields.Char('Longitudinal')
+    name = fields.Char('code')
